@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 #include <sys/stat.h>
 #include "chmod_files_rec.h"
 
@@ -9,6 +11,10 @@ int main()
 
     printf(PATH_REQUEST_MSG);
     scanf("%s", path);
+
+    if (strcmp(path, ".") == 0)
+        getcwd(path, sizeof(path));
+
     if (stat(path, &sb) == 0 && S_ISDIR(sb.st_mode))
     {
         // If folder is exist start the process
