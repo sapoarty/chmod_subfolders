@@ -3,4 +3,4 @@ project(chmod_subfolders C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(chmod_subfolders main.c)
+add_executable(chmod_subfolders main.c chmod_files_rec.c)

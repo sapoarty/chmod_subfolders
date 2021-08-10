@@ -81,7 +81,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_chmod.c");
-  run_test(test_add, "test_add", 45);
+  run_test(test_add, "test_add", 59);
 
   return UnityEnd();
 }

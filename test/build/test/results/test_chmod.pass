@@ -4,7 +4,7 @@
   :file: test_chmod.c
 :successes:
 - :test: test_add
-  :line: 45
+  :line: 59
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -15,19 +15,19 @@
   :failed: 0
   :ignored: 0
 :stdout:
-- Week_2
-- C_Substrings.c
-- ".DS_Store"
-- A_Input_1.txt
-- A_Sections.exe
-- D_Input_1.txt
-- D_Input_2.txt
-- D_Neighbors.c
-- C_Substrings.h
-- B_Matrix_Transp.exe
-- C_Substrings.exe
-- D_Neighbors.exe
-- A_Sections.c
-- B_Matrix_Transp.c
-- ".DS_Store"
-:time: 5.39067300001625
+- Week_2 checking...
+- C_Substrings.c checking...
+- ".DS_Store checking..."
+- A_Input_1.txt checking...
+- A_Sections.exe checking...
+- D_Input_1.txt checking...
+- D_Input_2.txt checking...
+- D_Neighbors.c checking...
+- C_Substrings.h checking...
+- B_Matrix_Transp.exe checking...
+- C_Substrings.exe checking...
+- D_Neighbors.exe checking...
+- A_Sections.c checking...
+- B_Matrix_Transp.c checking...
+- ".DS_Store checking..."
+:time: 0.7652179999276996

@@ -3,6 +3,32 @@
 
 
 
+int dec_to_oct(int decimalNumber)
+
+{
+
+    int octalNumber = 0, i = 1;
+
+
+
+    while (decimalNumber != 0)
+
+    {
+
+        octalNumber += (decimalNumber % 8) * i;
+
+        decimalNumber /= 8;
+
+        i *= 10;
+
+    }
+
+
+
+    return octalNumber;
+
+}
+
 
 
 void check_files_recur(char *basePath)
@@ -15,6 +41,8 @@ void check_files_recur(char *basePath)
 
     struct stat path_stat;
 
+
+
     stat(basePath, &path_stat);
 
     DIR *dir = opendir(basePath);
@@ -25,7 +53,7 @@ void check_files_recur(char *basePath)
 
     {
 
-        UnityAssertEqualNumber((UNITY_INT)(((0000400 | 0000200 | 0000040 | 0000004))), (UNITY_INT)(((path_stat.st_mode & 0x1FF))), (((void*)0)), (UNITY_UINT)(19), UNITY_DISPLAY_STYLE_INT);
+        UnityAssertEqualNumber((UNITY_INT)((dec_to_oct(0000400 | 0000200 | 0000040 | 0000004))), (UNITY_INT)((dec_to_oct(path_stat.st_mode & 0x1FF))), (((void*)0)), (UNITY_UINT)(33), UNITY_DISPLAY_STYLE_INT);
 
         return;
 
@@ -35,7 +63,7 @@ void check_files_recur(char *basePath)
 
     {
 
-        UnityAssertEqualNumber((UNITY_INT)(((0000700 | 0000040 | 0000010 | 0000004 | 0000001))), (UNITY_INT)(((path_stat.st_mode & 0x1FF))), (((void*)0)), (UNITY_UINT)(24), UNITY_DISPLAY_STYLE_INT);
+        UnityAssertEqualNumber((UNITY_INT)((dec_to_oct(0000700 | 0000040 | 0000010 | 0000004 | 0000001))), (UNITY_INT)((dec_to_oct(path_stat.st_mode & 0x1FF))), (((void*)0)), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_INT);
 
     }
 
@@ -49,7 +77,7 @@ void check_files_recur(char *basePath)
 
         {
 
-            printf("%s\n", dp->d_name);
+            printf("%s checking...\n", dp->d_name);
 
 
 
