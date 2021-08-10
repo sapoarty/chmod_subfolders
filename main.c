@@ -39,17 +39,15 @@ void chmod_files_rec(char *basePath)
 
 int main()
 {
-    // Directory path to list files
     char path[255];
     struct stat sb;
 
-    // Input path from user
     printf("Path to list files: ");
     scanf("%s", path);
     if (stat(path, &sb) == 0 && S_ISDIR(sb.st_mode))
     {
         chmod_files_rec(path);
-        printf("All file permissions have been changed\n")
+        printf("All file permissions have been changed\n");
     }
     else
         printf("Directory doesn't exist\n");
